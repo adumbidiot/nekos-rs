@@ -59,10 +59,8 @@ impl Client {
                     .map_err(|_| NekosError::Network)?
             }
         };
-		
-		
-		
-		res.json().map_err(|e| NekosError::Json(e.to_string()))
+
+        res.json().map_err(|e| NekosError::Json(e.to_string()))
     }
 
     pub fn get_random_images(&self, nsfw: bool, count: u8) -> NekosResult<ImageArray> {
